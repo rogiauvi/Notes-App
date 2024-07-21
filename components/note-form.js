@@ -8,7 +8,7 @@ class NoteForm extends HTMLElement {
           autocomplete="off" aria-describedby="ttileValidation">
           <p id="titleValidation" class="validation-message" aria-live="polite"></p>
         <textarea id="body" name="body" placeholder="Description" required
-          autocomplete="off" aria-describedby="bodyValidation" minlength="100"></textarea>
+          autocomplete="off" aria-describedby="bodyValidation" minlength="25"></textarea>
           <p id="bodyValidation" class="validation-message" aria-live="polite"></p>
         <button type="submit">Add Note</button>
       </form>
@@ -77,7 +77,7 @@ function validateBody(event) {
     return;
   }
   if (bodyInput.validity.tooShort) {
-    bodyInput.setCustomValidity('Minimal panjang Body adalah Seratus karakter.');
+    bodyInput.setCustomValidity('Minimal panjang Body adalah 25 karakter.');
     return;
   }
   
